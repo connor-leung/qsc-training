@@ -70,7 +70,7 @@ To get started with this training module:
 2. **Switch to the lesson branch:**
    ```bash
    git branch Frontend
-Replace Frontend with other branch names.
+Replace Frontend with other branch names to see other modules.
 
 3. **Navigate to the project directory:**
    ```bash
