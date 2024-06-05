@@ -65,7 +65,7 @@ To get started with this training module:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/queens-startup-consulting/tech-team-training.git
+   git clone https://github.com/connor-leung/qsc-training.git
 
 2. **Switch to the lesson branch:**
    ```bash
