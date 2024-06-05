@@ -65,20 +65,19 @@ To get started with this training module:
 
 1. **Clone the repository:**
    ```bash
-   git clone 
+   git clone https://github.com/connor-leung/qsc-training.git
 
 2. **Open repository:**
    ```bash
    cd tech-team-training
 
 3. **Install dependencies:**
-  ```bash
-  npm install
-
+   ```bash
+   npm install
+  
 4. **Start the webapp**
   ```bash
   npm start
-
 
 
 
