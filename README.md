@@ -76,9 +76,5 @@ To get started with this training module:
    npm install
   
 4. **Start the webapp**
-  ```bash
-  npm start
-
-
-
-
+   ```bash
+   npm start
