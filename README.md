@@ -67,14 +67,19 @@ To get started with this training module:
    ```bash
    git clone https://github.com/queens-startup-consulting/tech-team-training.git
 
-2. **Navigate to the project directory:**
+2. **Switch to the lesson branch:**
+   ```bash
+   git branch Frontend
+Replace Frontend with other branch names.
+
+3. **Navigate to the project directory:**
    ```bash
    cd qsc-training
 
-3. **Install the dependencies:**
+4. **Install the dependencies:**
    ```bash
    npm install
 
-4.Follow the instructions in each module's README to complete the lessons.
+5.Follow the instructions in each module's README to complete the lessons.
 
 
