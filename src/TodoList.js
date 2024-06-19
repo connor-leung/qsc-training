@@ -6,10 +6,12 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
+  // Add in loading tasks
   useEffect(() => {
     fetchTasks();
   }, []);
 
+  //Add featchTasks function
   const fetchTasks = async () => {
     try {
       const response = await axios.get('http://localhost:5000/tasks');
@@ -19,6 +21,7 @@ const TodoList = () => {
     }
   };
 
+  //Add addTask function
   const addTask = async () => {
     if (newTask.trim()) {
       try {
@@ -33,6 +36,7 @@ const TodoList = () => {
     }
   };
 
+  //Add deleteTask function
   const deleteTask = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/tasks/${id}`);
