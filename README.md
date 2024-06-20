@@ -76,5 +76,12 @@ To get started with this training module:
    npm install
   
 4. **Start the webapp**
-   ```bash
+    ```bash
    npm start
+
+5. **Start the backend server**
+    ```bash
+    // Note: A second terminal is required to run both the webapp and backend
+   node backend/server.js
+
+  
