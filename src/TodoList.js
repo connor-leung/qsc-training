@@ -1,4 +1,3 @@
-// TodoList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -35,6 +34,7 @@ const TodoList = () => {
 
   const deleteTask = async (id) => {
     try {
+      console.log('Deleting task with ID:', id);  // Debugging line
       await axios.delete(`http://localhost:5000/tasks/${id}`);
       setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
