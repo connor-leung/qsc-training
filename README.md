@@ -53,6 +53,37 @@ Next.js is a React framework that enables server-side rendering and static site 
 
 ## Backend Development
 
+### What is Backend?
+
+The backend handles the behind-the-scenes actions of a web application, including:
+
+- Server-side operations
+- Business logic
+- Database interactions
+- Authentication and authorization
+
+### APIs
+
+APIs (Application Programming Interfaces) are sets of rules and protocols that allow different software applications to communicate with each other. They define methods and data formats for request and exchange of information, enabling the frontend to interact with the backend.
+
+### Postman
+
+Postman is a popular API testing tool that allows developers to test, develop, and document APIs.
+
+### Express.js
+
+Express.js is a backend framework for Node.js using JavaScript, designed to build web applications and APIs. It supports:
+
+- HTTP request handling
+- Routing
+- Middleware
+- Server-side functionalities
+
+To install Express.js:
+- ```bash
+  npm i express
+
+
 ## Databasing
 
 ## Authentication
