@@ -80,8 +80,8 @@ Tool: A popular API testing tool that helps developers test, develop, and docume
 
 There are two different types of databases: 
 
-**SQL** (Relational Databases): Organizes 
-- data into tables with rows and columns. Examples include MySQL, Oracle Database, and SQLite.
+**SQL** (Relational Databases): 
+- Organizes data into tables with rows and columns. Examples include MySQL, Oracle Database, and SQLite.
   
 **NoSQL** (Non-Relational Databases): 
 - Handles data not fitting into tables. Examples include MongoDB and Firebase.
