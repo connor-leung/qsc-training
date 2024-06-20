@@ -1,18 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  const addTask = () => {
-    if (newTask.trim()) {
-      setTasks([...tasks, newTask]);
-      setNewTask('');
+  useEffect(() => {
+    fetchTasks();
+  }, []);
+
+  const fetchTasks = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/tasks');
+      setTasks(response.data);
+    } catch (error) {
+      console.error('Error fetching tasks', error);
     }
   };
 
-  const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+  const addTask = async () => {
+    if (newTask.trim()) {
+      try {
+        const response = await axios.post('http://localhost:5000/tasks', {
+          title: newTask,
+        });
+        setTasks([...tasks, response.data]);
+        setNewTask('');
+      } catch (error) {
+        console.error('Error adding task', error);
+      }
+    }
+  };
+
+  const deleteTask = async (id) => {
+    try {
+      console.log('Deleting task with ID:', id);  // Debugging line
+      await axios.delete(`http://localhost:5000/tasks/${id}`);
+      setTasks(tasks.filter((task) => task._id !== id));
+    } catch (error) {
+      console.error('Error deleting task', error);
+    }
   };
 
   return (
@@ -27,9 +54,9 @@ const TodoList = () => {
         <button onClick={addTask}>Add Task</button>
       </div>
       <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task} <button onClick={() => deleteTask(index)}>Delete</button>
+        {tasks.map((task) => (
+          <li key={task._id}>
+            {task.title} <button onClick={() => deleteTask(task._id)}>Delete</button>
           </li>
         ))}
       </ul>
