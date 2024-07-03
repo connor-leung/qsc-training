@@ -11,18 +11,24 @@ const TodoList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/tasks');
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:5000/tasks', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks', error);
     }
   };
-
+  
   const addTask = async () => {
     if (newTask.trim()) {
       try {
+        const token = localStorage.getItem('token');
         const response = await axios.post('http://localhost:5000/tasks', {
           title: newTask,
+        }, {
+          headers: { 'Authorization': `Bearer ${token}` }
         });
         setTasks([...tasks, response.data]);
         setNewTask('');
@@ -31,17 +37,19 @@ const TodoList = () => {
       }
     }
   };
-
+  
   const deleteTask = async (id) => {
     try {
-      console.log('Deleting task with ID:', id);  // Debugging line
-      await axios.delete(`http://localhost:5000/tasks/${id}`);
+      const token = localStorage.getItem('token');
+      await axios.delete(`http://localhost:5000/tasks/${id}`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
       setTasks(tasks.filter((task) => task._id !== id));
     } catch (error) {
       console.error('Error deleting task', error);
     }
   };
-
+  
   return (
     <div>
       <h2>Todo List</h2>

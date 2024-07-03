@@ -3,10 +3,6 @@ const router = express.Router();
 const Task = require('../models/Task');
 const mongoose = require('mongoose');
 
-<<<<<<< Updated upstream
-=======
-// View all tasks in database
->>>>>>> Stashed changes
 router.get('/', async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -16,10 +12,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-<<<<<<< Updated upstream
-=======
-// Create a task
->>>>>>> Stashed changes
 router.post('/', async (req, res) => {
   const task = new Task({
     title: req.body.title,
