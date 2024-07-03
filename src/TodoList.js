@@ -20,7 +20,7 @@ const TodoList = () => {
       console.error('Error fetching tasks', error);
     }
   };
-  
+
   const addTask = async () => {
     if (newTask.trim()) {
       try {
@@ -37,7 +37,7 @@ const TodoList = () => {
       }
     }
   };
-  
+
   const deleteTask = async (id) => {
     try {
       const token = localStorage.getItem('token');
@@ -49,7 +49,7 @@ const TodoList = () => {
       console.error('Error deleting task', error);
     }
   };
-  
+
   return (
     <div>
       <h2>Todo List</h2>
