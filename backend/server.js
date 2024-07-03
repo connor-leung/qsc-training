@@ -16,7 +16,6 @@ mongoose.connect('mongodb://localhost:27017/todoapp', {
   useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB connected'))
-<<<<<<< Updated upstream
 .catch((err) => console.log(err));
 
 // Routes
@@ -26,14 +25,3 @@ app.use('/tasks', tasks);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-=======
-.catch((err) => console.log(err))
-
-// Routes
-const tasks = require('./routes/tasks')
-app.use('/tasks', tasks)
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
->>>>>>> Stashed changes
