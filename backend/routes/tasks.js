@@ -4,9 +4,11 @@ const Task = require('../models/Task');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
+
 // Middleware to authenticate the user
 const authenticate = (req, res, next) => {
   const token = req.header('Authorization').replace('Bearer ', '');
+router.get('/', async (req, res) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
@@ -26,8 +28,10 @@ router.get('/', authenticate, async (req, res) => {
   }
 });
 
+
 // Create a new task for the logged-in user
 router.post('/', authenticate, async (req, res) => {
+router.post('/', async (req, res) => {
   const task = new Task({
     title: req.body.title,
     userId: req.user.id,

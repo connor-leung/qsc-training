@@ -16,6 +16,8 @@ Welcome to the Queen's Startup Consulting Technical Team Training Module! This r
 - [Databasing](#databasing)
   - [MongoDB](#mongodb)
 - [Authentication](#authentication)
+  - [JWT](#JSONWebTokens)
+  - [bcrypt](#bcrypt)
 - [AI Integration](#ai-integration)
 - [Getting Started](#getting-started)
 - [Resources](#resources)
@@ -92,6 +94,50 @@ This repo covers using MongoDB as it provides scalability, performance, and flex
 
 ## Authentication
 
+### JSON Web Tokens
+
+- A JSON object that is used to securely transmit information between parties as a JSON object.
+- This information can be verified and trusted because it is digitally signed.
+
+#### A JWT is composed of three parts
+- Header
+- Payload
+- Signature
+
+#### JWT Continued
+
+##### Header
+- The type of the token, which is JWT
+- The signing algorithm being used, such as HMAC SHA256 or RSA.
+
+##### Payload
+The payload contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims:
+- Registered claims
+- Public claims
+- Private claims
+
+##### Signature
+Ensures its integrity and authenticity. It allows the recipient of the token to verify that it has not been altered and confirms the identity of the issuer.
+
+#### Flow
+
+1. **User Authentication**: When a user successfully logs in using their credentials, a JWT is generated and sent back to the user.
+2. **Client Storage**: The client (typically a browser) stores the token, usually in local storage or a cookie.
+3. **Subsequent Requests**: For each subsequent request, the client sends the JWT in the HTTP header (usually in the Authorization header using the Bearer schema).
+4. **Token Verification**: The server receives the token, verifies it using the secret or public key, and, if valid, processes the request.
+
+### bcrypt
+
+- Bcrypt is a password-hashing function designed to be computationally intensive and resistant to brute-force attacks.
+
+#### Security
+- Storing passwords as plain text is highly insecure. Hashing passwords ensures that even if the database is compromised, the actual passwords remain secure.
+
+### Database Connections
+
+- To connect user-specific data, the reference key is used to signify the parent Object.
+- In this example, `ref: 'User'`: Specifies that this ObjectId references the User collection.
+
 ## AI Integration
 
 ## Getting Started
@@ -129,6 +175,10 @@ To get started with this training module:
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Next.js](https://nextjs.org/)
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [JWT](https://jwt.io/)
+- [MongoDB Database References](https://www.mongodb.com/docs/manual/reference/database-references/)
+
 
 
 
