@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config(); // Add this line to load .env variables
+require('dotenv').config();
 
 const app = express();
 const port = 5000;
