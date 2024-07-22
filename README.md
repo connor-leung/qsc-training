@@ -139,6 +139,19 @@ Ensures its integrity and authenticity. It allows the recipient of the token to 
 - In this example, `ref: 'User'`: Specifies that this ObjectId references the User collection.
 
 ## AI Integration
+### Supervised Machine Learning
+Provided a dataset, a model can be created by trying to fit the dataset using an algorithm.
+
+### Test Train Dataset Splitting
+In order to evaluate if the machine learning model actually "learned" how to make predictions, rather than just "memorizing" its training data, we can split our larger dataset into a train and test dataset. We can train the model on the train dataset and evaluate its accuracy on the test dataset.
+
+### Sample Models
+This tutorial covered how to use linear regression, logistic classifiers, and neural networks for both classification and regression, although there are many more models worth exploring (e.g. random forest, bayesian classifiers). Regression models predict what a value will specifically be (e.g. what a stock price will be), whereas classification models categorized datapoints into qualitative "buckets" (e.g. does the image show an apple, pear, or banana).
+
+### Validation Testing
+When a model is made, and is being evaluated against both the training and test data, certain metrics can be used to understand the model's accuracy. R-square can be used to evaluate how well a simple linear regression performs, whereas adjusted R-square can be used to evaluate multi-linear regressions and regression-based neural networks. The closer R-square or adjusted R-sqaure is to 1, the better.
+
+A confusion matrix is used to evaluate classification models such as logistic classifiers and classification based neural networks. The higher both true positive and true negative are, the better the models perform.
 
 ## Getting Started
 
