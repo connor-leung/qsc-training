@@ -1,6 +1,8 @@
 # Queen's Startup Consulting Technical Team Training Module
 
-Welcome to the Queen's Startup Consulting Technical Team Training Module! This repository contains a comprehensive set of lessons designed to equip our technical team with the necessary skills to excel in various areas of software development. The curriculum covers frontend and backend development, databasing, authentication, and AI.
+Welcome to the Queen's Startup Consulting Technical Team Training Module! This repository contains a comprehensive set of lessons designed to equip our technical team with the necessary skills to excel in various areas of software development. The curriculum covers frontend and backend development, databasing, authentication, and AI. 
+
+# [Click Here for Video Tutorials](https://drive.google.com/drive/folders/1XJD0Xt4_MLANZsS1sZYm4jPPzn9kqw91?usp=drive_link)
 
 ## Table of Contents
 
