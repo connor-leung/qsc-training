@@ -1,20 +1,11 @@
 import * as React from "react";
-import { makeStyles } from "@fluentui/react-components";
+import { MemoryRouter as Router, Routes, Route } from "react-router-dom"; // Use MemoryRouter instead of HashRouter
 import Posts from "./Posts";
 import Login from "./Login";
 import Signup from "./Signup";
 
-const useStyles = makeStyles({
-  root: {
-    minHeight: "100vh",
-  },
-});
-
 const App: React.FC = () => {
-  const styles = useStyles();
   const [isOfficeInitialized, setIsOfficeInitialized] = React.useState(false);
-  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-  const [isSigningUp, setIsSigningUp] = React.useState(false);
 
   // Use Office.onReady to ensure Office.js is fully loaded
   React.useEffect(() => {
@@ -24,37 +15,25 @@ const App: React.FC = () => {
   }, []);
 
   const handleLogin = () => {
-    setIsAuthenticated(true);
+    console.log("User logged in!");
   };
 
   const handleSignup = () => {
-    setIsAuthenticated(true);
-  };
-
-  const switchToSignup = () => {
-    setIsSigningUp(true);
-  };
-
-  const switchToLogin = () => {
-    setIsSigningUp(false);
+    console.log("User signed up!");
   };
 
   if (!isOfficeInitialized) {
     return <p>Loading...</p>; // Show a loading message until Office.js is ready
   }
 
-  if (!isAuthenticated) {
-    if (isSigningUp) {
-      return <Signup onSignup={handleSignup} onSwitchToLogin={switchToLogin} />;
-    } else {
-      return <Login onLogin={handleLogin} onSwitchToSignup={switchToSignup} />;
-    }
-  }
-
   return (
-    <div className={styles.root}>
-      <Posts />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login onLogin={handleLogin} />} />
+        <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
+        <Route path="/posts" element={<Posts />} />
+      </Routes>
+    </Router>
   );
 };
 
